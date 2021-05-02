@@ -17,8 +17,9 @@ function handleSubmission (event) {
 }
 
 function searchApi (locationVal) {
+    var key = 'ab8da6ccc8f4bdca20182da7d0619b48'
     if (locationVal) {
-        cityUrl = 'pro.openweathermap.org/data/2.5/forecast/hourly?q=' + locationVal + '&appid={ab8da6ccc8f4bdca20182da7d0619b48}' 
+        cityUrl = 'pro.openweathermap.org/data/2.5/forecast/hourly?q=' + locationVal + '&appid=' + key
     }
 
     fetch(requestURL)
