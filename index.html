@@ -6,9 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
 </head>
-<header>
-    <header id="gradient" class="display-3">Weather Forecast</header>
-</header>
+<header id="gradient" class="display-3">Weather Forecast</header>
+<main>
+    <div id="search" class="col-md-3 mx-4 my-2 ui-widget border-bottom border-dark pb-3 w-25">
+        <input id="tags" class="col my-3" placeholder="Search City"></input>
+        <button class="btn btn-primary col" id="searchBtn">Search</button>
+      </div>
+    <div id="currentForecast" class="col-md-8">
+        <div class="row mx-1 border border-dark">
+        <div class="todayCurrentCity col-12 h3 font-weight-bold">City/Date</div> 
+        <div class="col-12">Temperature: <span id="currentTemp"></span></div>
+        <div class="col-12">Wind: <span id="currentWind"></span></div>
+        <div class="col-12">Humidity: <span id="currentHumidity"></span></div>
+        <div class="col-12">UV Index: <span id="currentUV"></span></div>
+    </div>
+    </div>
+  </main>
 <body>
  
     
