@@ -1,4 +1,3 @@
-var requestURL = 'pro.openweathermap.org/data/2.5/forecast/hourly?q=city&appid={ab8da6ccc8f4bdca20182da7d0619b48}'
 var search = $('#searchBtn')
 var locationVal = $('#location')
 
@@ -22,7 +21,7 @@ function searchApi (locationVal) {
         cityUrl = 'pro.openweathermap.org/data/2.5/forecast/hourly?q=' + locationVal + '&appid=' + key
     }
 
-    fetch(requestURL)
+    fetch(cityUrl)
         .then(function (response){
             if(!response.ok) {
                 throw response.json();
