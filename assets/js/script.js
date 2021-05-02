@@ -1,5 +1,6 @@
+var key = 'ab8da6ccc8f4bdca20182da7d0619b48'
 var search = $('#searchBtn')
-var locationVal = $('#location')
+const locationVal = $('#locations')
 
 search.click('click', handleSubmission)
 
@@ -10,23 +11,17 @@ function handleSubmission (event) {
         console.log('You need a search input value!');
         return;
     }
-
-    searchApi(locationVal)
+    
+    weather();
 
 }
 
-function searchApi (locationVal) {
-    var key = 'ab8da6ccc8f4bdca20182da7d0619b48'
-    if (locationVal) {
-        cityUrl = 'pro.openweathermap.org/data/2.5/forecast/hourly?q=' + locationVal + '&appid=' + key
-    }
-
-    fetch(cityUrl)
+function weather (locationVal) {
+    fetch('pro.openweathermap.org/data/2.5/forecast/hourly?q=' + locationVal + '&appid=' + key)
         .then(function (response){
             if(!response.ok) {
                 throw response.json();
             }
-            
             return response.json();
         })
         
