@@ -1,4 +1,4 @@
-const key = '7d1e38fa78c170ddf046d66ae3d5c82a'
+var APIKey = '2f4eb5b7c35ea26b6d2bd67436f4e25c';
 var search = $('#searchBtn')
 const locationVal = $('#locations')
 
@@ -16,8 +16,8 @@ function handleSubmission (event) {
 
 }
 
-function weather (locationVal) {
-    fetch('https://pro.openweathermap.org/data/2.5/forecast/hourly?q=' + locationVal + '&appid=' + key)
+function weather (location) {
+    fetch('https://pro.openweathermap.org/data/2.5/forecast/hourly?q=' + locationVal + '&appid=' + APIKey)
         .then(function (response){
             if(!response.ok) {
                 throw response.json();
