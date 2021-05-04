@@ -1,4 +1,4 @@
-var key = 'ab8da6ccc8f4bdca20182da7d0619b48'
+const key = '7d1e38fa78c170ddf046d66ae3d5c82a'
 var search = $('#searchBtn')
 const locationVal = $('#locations')
 
@@ -17,7 +17,7 @@ function handleSubmission (event) {
 }
 
 function weather (locationVal) {
-    fetch('pro.openweathermap.org/data/2.5/forecast/hourly?q=' + locationVal + '&appid=' + key)
+    fetch('https://pro.openweathermap.org/data/2.5/forecast/hourly?q=' + locationVal + '&appid=' + key)
         .then(function (response){
             if(!response.ok) {
                 throw response.json();
