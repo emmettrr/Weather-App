@@ -1,7 +1,7 @@
 const apiKey = "2f4eb5b7c35ea26b6d2bd67436f4e25c"
 var search = $('#searchBtn')
 const inputVal = $('#locations').value;
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`
+const url = `https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${lon}&dt=${time}&appid=${apiKey}&units=metric`
 
 search.click('click', handleSubmission)
 
