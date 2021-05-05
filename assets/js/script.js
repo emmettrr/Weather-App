@@ -16,23 +16,27 @@ search.click(function weather(event){
 })
 
 function isEmpty(obj) {
-    for(var key in obj) {
-        if(obj.hasOwnProperty(key)) {
+    for(var apiKey in obj) {
+        if(obj.hasOwnProperty(apiKey)) {
             return false; 
         }
     }
     return true; 
 }
 
-// function handleSubmission (event) {
-//     event.preventDefault();
 
-//     if(!inputVal) {
-//         console.log(inputVal);
-//         return;
-//     }
-//     weather();
-// }
+function formSubmitHandler(event) {
+    event.preventDefault(); 
+    console.log(inputVal)
+    let city = inputVal[0].value.trim();
+    
+    if(city) {
+        getCurrentWeather(city); 
+        inputVal.textContent = " "; 
+    } else {
+        alert("Please Enter a City")
+    }
+}
 
 
 
