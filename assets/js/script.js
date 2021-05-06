@@ -1,7 +1,7 @@
-const apiKey = '2f4eb5b7c35ea26b6d2bd67436f4e25c'
-const inputVal = $('#locations')
+var apiKey = '2f4eb5b7c35ea26b6d2bd67436f4e25c'
+var inputVal = $('#locations')
 var units = '&units=imperial';
-var url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&units=imperial&appid=${apiKey}`
+var url = `https://api.openweathermap.org/data/2.5/weather?q=`
 
 
 $('#searchBtn').on('click',function(){
