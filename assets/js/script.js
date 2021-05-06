@@ -4,8 +4,9 @@ const inputVal = $('#locations')
 var units = '&units=imperial';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&units=imperial&appid=${apiKey}`
 
-search.click(function weather(event){
+$('#searchBtn').click(function(){
     fetch(url)
+    console.log(url,"hello")
         .then(response => response.json())
         .then(data => {
             var temp = data['#currentTemp']
@@ -16,45 +17,3 @@ search.click(function weather(event){
             inputVal.innerHTML = `City: ${'temp'}`
         })
 })
-
-
-function formSubmitHandler(event) {
-    event.preventDefault(); 
-    console.log(inputVal)
-    let city = inputVal[0].value.trim();
-    
-    if(city) {
-        getCurrentWeather(city); 
-        inputVal.textContent = " "; 
-    } else {
-        alert("Please Enter a City")
-    }
-}
-
-
-
-
-function weather (location) {
-    
-    
-        
-    }
-//         .then(function (localRes) {
-//             var localRes = $('#searchHistory')
-
-//             inputVal.textContent = localRes.search.query;
-
-//             if (!localRes.results.length) {
-//                 inputVal.innerHTML = '<h4>No city found, try again!</h4>';
-//             } else {
-//                 inputVal.textContent = '';
-//                 for (let i = 0; i < localRes.results.length; i++) {
-//                     printResults(localRes.results[i]);
-                    
-//                 }
-//             }
-//         })
-//         .catch(() => {
-//             msg.textContent = "Please search for a valid city!";
-//           });
-// }
