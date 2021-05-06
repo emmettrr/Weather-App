@@ -21,8 +21,9 @@ $('#searchBtn').on('click',function(){
     .then(data => {
         console.log(data)
         
+        let currentIcon = $("<i>").html(`<img src="https://openweathermap.org/img/wn/${icon}.png"/>`); 
+        weatherIcon.append(currentIcon); 
         var currentDate = moment().format('MMMM Do YYYY')
-        var currentIcon = "http://openweathermap.org/img/w/" + data['list'][0]['weather'][0]['icon'] + ".png"
         var currentCity = data['city']['name']
         var currentTemp = data['list'][0]['main']['temp']
         var currentWind = data['list'][0]['wind']['speed']
