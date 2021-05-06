@@ -17,11 +17,11 @@ $('#searchBtn').on('click',function(){
             var humid = data['#currentHumidity']
             var uv = data['#currentUV']
 
-            name.innerHTML = `City: ${'name'}`
-            temp.innerHTML = `Temperature: ${'temp'} F`
-            wind.innerHTML = `Wind Speed: ${'wind'} mph`
-            humid.innerHTML = `Current Humidity: ${'humid'}`
-            uv.innerHTML = `UV: ${'#currentUV'}`
+            name.innerHTML = ` ${'name'}`.append(`${data.name}`)
+            temp.innerHTML = ` ${'temp'}`.append(`${data.main.temp}℉`)
+            wind.innerHTML = ` ${'wind'} mph`
+            humid.innerHTML = ` ${'humid'}`
+            uv.innerHTML = ` ${'#currentUV'}`
         }
         
         )})
