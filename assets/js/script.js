@@ -2,6 +2,7 @@ var apiKey = '&appid=2f4eb5b7c35ea26b6d2bd67436f4e25c'
 var input = document.getElementById('locations')
 var units = '&units=imperial';
 var url = `https://api.openweathermap.org/data/2.5/weather?q=`
+var fiveUrl = `https://api.openweathermap.org/data/2.5/forecast?q=`
 var name = document.getElementById('currentCity')
 var temp = document.getElementById('currentTemp')
 var wind = document.getElementById('currentWind')
@@ -22,5 +23,18 @@ $('#searchBtn').on('click',function(){
         wind.innerHTML = `${currentWind}`
         humid.innerHTML = `${currentHum}`
     })
-        
+    .catch(console.log())
 })
+
+    $('#searchBtn').on('click', function(five){
+        fetch(fiveUrl + input.value + apiKey + units)
+        .then(response => response.json())
+        .then(data => {
+        
+        
+
+
+
+        })
+
+    })
