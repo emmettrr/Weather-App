@@ -1,29 +1,39 @@
 var apiKey = '&appid=2f4eb5b7c35ea26b6d2bd67436f4e25c'
 var input = document.getElementById('locations')
 var units = '&units=imperial';
+var icon = document.getElementById('icon')
 var fiveUrl = `https://api.openweathermap.org/data/2.5/forecast?q=`
-var name = document.getElementById('currentCity')
+var city = document.getElementById('currentCity')
 var temp = document.getElementById('currentTemp')
 var wind = document.getElementById('currentWind')
 var humid = document.getElementById('currentHumidity')
 var date = document.getElementById('date')
-
+var dayOne = document.getElementById('dayOne')
+var dayTwo = document.getElementById('dayTwo')
+var dayThree = document.getElementById('dayThree')
+var dayFour = document.getElementById('dayFour')
+var dayFive = document.getElementById('dayFive')
+var dateOne = document.getElementById('dateOne')
 
 $('#searchBtn').on('click',function(){
     fetch(fiveUrl+input.value+apiKey+units)
     .then(response => response.json())
     .then(data => {
         console.log(data)
-        
-        var currentName = data['city']['name']
+
+        var currentDate = moment().format('MMMM Do YYYY')
+        var currentIcon = data['list'][0]['weather'][0]['icon']
+        var currentCity = data['city']['name']
         var currentTemp = data['list'][0]['main']['temp']
         var currentWind = data['list'][0]['wind']['speed']
         var currentHum = data['list'][0]['main']['humidity']
 
-        name.innerHTML = `${currentName}`
+        icon.innerHTML = `${currentIcon}`
+        city.innerHTML = `${currentCity}`
         temp.innerHTML = `${currentTemp}`
         wind.innerHTML = `${currentWind}`
         humid.innerHTML = `${currentHum}`
+        date.innerHTML = `${currentDate}`
     })
     
     .catch(console.log())
