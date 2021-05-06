@@ -1,6 +1,7 @@
 const apiKey = '2f4eb5b7c35ea26b6d2bd67436f4e25c'
 var search = $('#searchBtn')
-const inputVal = $('#locations').value;
+const inputVal = $('#locations')
+var units = '&units=imperial';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&units=imperial&appid=${apiKey}`
 
 search.click(function weather(event){
@@ -9,20 +10,11 @@ search.click(function weather(event){
         url: url,
         method: "GET",
     }) .then(function (response){
-        console.log('AJAX response \n ------------')
-        console.log(response)
-        console.log("t", response.results.lengths)
+        // console.log('AJAX response \n ------------')
+        // console.log(response)
+        // console.log("t", response.results.lengths)
     })
 })
-
-function isEmpty(obj) {
-    for(var apiKey in obj) {
-        if(obj.hasOwnProperty(apiKey)) {
-            return false; 
-        }
-    }
-    return true; 
-}
 
 
 function formSubmitHandler(event) {
