@@ -5,15 +5,16 @@ var units = '&units=imperial';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&units=imperial&appid=${apiKey}`
 
 search.click(function weather(event){
-    $.ajax({
-        dataType: 'json',
-        url: url,
-        method: "GET",
-    }) .then(function (response){
-        // console.log('AJAX response \n ------------')
-        // console.log(response)
-        // console.log("t", response.results.lengths)
-    })
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            var temp = data['#currentTemp']
+            var wind = data['#currentWind']
+            var humid = data['#currentHumidity']
+            var uv = data['#currentUV']
+
+            inputVal.innerHTML = `City: ${'temp'}`
+        })
 })
 
 
@@ -33,13 +34,11 @@ function formSubmitHandler(event) {
 
 
 
-// function weather (location) {
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-
-//         })
+function weather (location) {
+    
+    
         
+    }
 //         .then(function (localRes) {
 //             var localRes = $('#searchHistory')
 
