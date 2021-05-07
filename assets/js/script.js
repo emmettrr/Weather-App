@@ -30,6 +30,8 @@ $('#searchBtn').on('click',function(){
         wind.innerHTML = `${currentWind}`
         humid.innerHTML = `${currentHum}`
         date.innerHTML = `${currentDate}`
+
+        localStorage.setItem('previous city', input.value)
     })
     
     .catch(console.log())
@@ -65,6 +67,14 @@ $('#searchBtn').on('click',function(){
             humidityContainer.append(humidityF)
 
             forecastList.append(cityContainer)
+        
         }
     }
-)})
+    
+    )})
+
+
+    $('#searchBtn').on('click',function(event){
+        var lastCity = localStorage.getItem('previous city')
+        $('#previousSearch').prepend(`<button class="btn btn-secondary col mb-2 searchBtn">${lastCity}</button>`)
+    })
