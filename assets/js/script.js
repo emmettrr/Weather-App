@@ -9,34 +9,35 @@ var temp = document.getElementById('currentTemp')
 var wind = document.getElementById('currentWind')
 var humid = document.getElementById('currentHumidity')
 var date = document.getElementById('date')
+var previous = document.getElementById('previousSearch').value
 
-$('#searchBtn').on('click',function(){
+$('#searchBtn').on('click',function(test){
     fetch(Url+input.value+apiKey+units)
     .then(response => response.json())
     .then(data => {
         console.log(data)
 
        
-        let currentIcon = `https://openweathermap.org/img/wn/ + data['weather']['icon']+ '.png`; 
+        var weatherIcon = 'https://openweathermap.org/img/wn/' + data.weather[0].icon + '.png' 
         var currentDate = moment().format('MMMM Do YYYY')
         var currentCity = data['name']
         var currentTemp = data['main']['temp']
         var currentWind = data['wind']['speed']
         var currentHum = data['main']['humidity']
 
-        // icon.innerHTML = `${currentIcon}`
         city.innerHTML = `${currentCity}`
         temp.innerHTML = `${currentTemp}`
         wind.innerHTML = `${currentWind}`
         humid.innerHTML = `${currentHum}`
         date.innerHTML = `${currentDate}`
+        currentPic.src = weatherIcon
 
         localStorage.setItem('previous city', input.value)
     })
     
     .catch(console.log())
 })
-$('#searchBtn').on('click',function(){
+$('#searchBtn').on('click',function(fiveDay){
     fetch(forecastApi+input.value+apiKey+units)
     .then(function(response){
         return response.json();
@@ -76,5 +77,11 @@ $('#searchBtn').on('click',function(){
         var lastCity = localStorage.getItem('previous city')
         $('#previousSearch').prepend(`<button class="btn btn-secondary col mb-2 searchBtn">${lastCity}</button>`)
     
+    })
+
+    $('#searchBtn').on('click', function(){
+        localStorage.getItem('previous city')
+        fiveDay();
+        test();
     })
 })
