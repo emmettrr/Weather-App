@@ -2,7 +2,7 @@ var apiKey = '&appid=2f4eb5b7c35ea26b6d2bd67436f4e25c'
 var input = document.getElementById('locations')
 var units = '&units=imperial';
 var icon = document.getElementById('weatherIcon')
-var forecastApi = 'http://api.openweathermap.org/data/2.5/forecast?q='
+var forecastApi = 'https://api.openweathermap.org/data/2.5/forecast?q='
 var Url = `https://api.openweathermap.org/data/2.5/weather?q=`
 var city = document.getElementById('currentCity')
 var temp = document.getElementById('currentTemp')
@@ -43,7 +43,8 @@ $('#searchBtn').on('click',function(){
     })
     .then(function(data){
         console.log(data);
-        for (let i = 4; i < 40; i+=8) {
+        for (let i = 0; i < 5; i++) {
+            if (i === 5) { break; }
             var cityContainer = document.createElement('div')
             var cityDateContainer = document.createElement('p') 
             var tempContainer = document.createElement('p')
