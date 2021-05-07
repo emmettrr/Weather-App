@@ -52,13 +52,18 @@ $('#searchBtn').on('click',function(fiveDay){
             var tempContainer = document.createElement('p')
             var windSpeedContainer = document.createElement('p')
             var humidityContainer = document.createElement('p')
+            var weatherIconContainer = document.createElement('img')
             
-            cityContainer.append(cityDateContainer, tempContainer, windSpeedContainer, humidityContainer)
+            cityContainer.append(cityDateContainer, weatherIconContainer, tempContainer, windSpeedContainer, humidityContainer)
             cityContainer.classList.add('card')
             tempContainer.textContent = 'Temperature: F'
             windSpeedContainer.textContent = 'Wind Speed: '
             humidityContainer.textContent = 'Humidity: '
             cityDateContainer
+
+
+            var weatherIcon = 'https://openweathermap.org/img/wn/' + data.list[i].weather[0].icon + '.png'
+            weatherIconContainer.src = weatherIcon
 
             var tempF = data.list[i].main.temp
             tempContainer.append(tempF)
