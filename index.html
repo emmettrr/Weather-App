@@ -14,18 +14,19 @@
         <form id="locationForm">
         <input id="locations" type= "text" col my-3" placeholder="Search City"></input></form>
         <button class="btn btn-primary col" id="searchBtn">Search</button>
+        <ul id="previousSearch"></ul>
     </div>
-    <div id="currentForecast" class="col-md-8">
+    <div id="currentForecast" class="col-md-8 offset-md-2">
         <div class="row mx-1 border border-dark">
         <div class="todayCurrentCity col-12 h3 font-weight-bold">City:<span id = "currentCity"></span><div id="date"><span id="weatherIcon"></span></div></div> 
         <img id='currentPic' src='' alt='' class='float-right'>
         <div class="col-12">Temperature: <span id="currentTemp"></span></span></div>
         <div class="col-12">Wind: <span id="currentWind"></span></div>
         <div class="col-12">Humidity: <span id="currentHumidity"></span></div>
-        <ul id="previousSearch"></ul>
+        
     </div>
     </div>
-    <div class='row mx-auto card-deck'>
+    <div class='row mx-auto card-deck offset-md-2'>
       <div class='forecast'>
           <div class='container-fluid m1-2'>
               <div class='row p-2 '>

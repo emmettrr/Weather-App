@@ -26,7 +26,7 @@ $('#searchBtn').on('click',function(test){
         var currentHum = data['main']['humidity']
 
         city.innerHTML = `${currentCity}`
-        temp.innerHTML = `${currentTemp}`
+        temp.innerHTML = `${currentTemp}` + ' F'
         wind.innerHTML = `${currentWind}`
         humid.innerHTML = `${currentHum}`
         date.innerHTML = `${currentDate}`
@@ -56,7 +56,7 @@ $('#searchBtn').on('click',function(fiveDay){
             
             cityContainer.append(cityDateContainer, weatherIconContainer, tempContainer, windSpeedContainer, humidityContainer)
             cityContainer.classList.add('card')
-            tempContainer.textContent = 'Temperature: F'
+            tempContainer.textContent = 'Temperature:'
             windSpeedContainer.textContent = 'Wind Speed: '
             humidityContainer.textContent = 'Humidity: '
             cityDateContainer
@@ -66,7 +66,7 @@ $('#searchBtn').on('click',function(fiveDay){
             weatherIconContainer.src = weatherIcon
 
             var tempF = data.list[i].main.temp
-            tempContainer.append(tempF)
+            tempContainer.append(tempF + ' F')
 
             var windSpeedF = data.list[i].wind.speed
             windSpeedContainer.append(windSpeedF)
