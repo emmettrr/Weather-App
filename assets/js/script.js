@@ -44,7 +44,7 @@ $('#searchBtn').on('click',function(){
     .then(function(data){
         console.log(data);
         $('#forecastList').empty();
-        for (let i = 0; i < 5; i++) {
+        for (let i = 4; i < 40; i+=8) {
             
             var cityContainer = document.createElement('div')
             var cityDateContainer = document.createElement('p') 
@@ -69,6 +69,9 @@ $('#searchBtn').on('click',function(){
             humidityContainer.append(humidityF)
 
             forecastList.append(cityContainer)
+
+            var cityDate = data.list[i].dt_txt
+            cityDateContainer.append(cityDate)
         }
         var lastCity = localStorage.getItem('previous city')
         $('#previousSearch').prepend(`<button class="btn btn-secondary col mb-2 searchBtn">${lastCity}</button>`)
