@@ -70,12 +70,8 @@ $('#searchBtn').on('click',function(){
 
             forecastList.append(cityContainer)
         }
-    }
-    
-    )})
-
-
-    $('#searchBtn').on('click',function(event){
         var lastCity = localStorage.getItem('previous city')
         $('#previousSearch').prepend(`<button class="btn btn-secondary col mb-2 searchBtn">${lastCity}</button>`)
+    
     })
+})
