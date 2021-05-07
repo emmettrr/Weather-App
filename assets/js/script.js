@@ -44,7 +44,7 @@ $('#searchBtn').on('click',function(){
     .then(function(data){
         console.log(data);
         for (let i = 0; i < 5; i++) {
-            if (i === 5) { break; }
+            
             var cityContainer = document.createElement('div')
             var cityDateContainer = document.createElement('p') 
             var tempContainer = document.createElement('p')
@@ -68,7 +68,8 @@ $('#searchBtn').on('click',function(){
             humidityContainer.append(humidityF)
 
             forecastList.append(cityContainer)
-        
+            
+            if (i === 5) { break; }
         }
     }
     
