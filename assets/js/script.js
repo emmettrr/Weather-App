@@ -82,11 +82,6 @@ $('#searchBtn').on('click',function(fiveDay){
         var lastCity = localStorage.getItem('previous city')
         $('#previousSearch').prepend(`<button class="btn btn-secondary col mb-2 searchBtn">${lastCity}</button>`)
         
-        document.querySelectorAll('.some-class').forEach(item => {
-            item.addEventListener('click', event => {
-              //handle click
-})
-
-})
-})
+        
+    })
 })
